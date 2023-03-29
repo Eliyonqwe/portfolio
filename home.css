@@ -1,16 +1,13 @@
 *{
-    margin: 1.5px;
+    margin: 0;
     padding: 0;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     box-sizing: border-box;
 }
 
 .menu ul li{
-    display: inline;
-    font-size: 1.3rem;
-    
-    
-    
+    display: inline-block;
+    font-size: 1.3rem; 
 }
 
 .menu ul {
@@ -21,6 +18,8 @@
     display: flex;
 
 }
+
+
 .main .header{
     width: 100vw;
     background-color:#11292c;
@@ -31,9 +30,33 @@
 .menu ul li a{
     text-decoration: none;
     color: white;
-    padding: 0.65rem 1.5rem;    
+     padding: 0.65rem 1.5rem;     
+   
 }
 
+.menu ul li a:hover{
+    color: greenyellow;
+}
+
+.menu ul li a::after{
+    content: '';
+    width: 0;
+    height: 0.2rem;
+    box-shadow: 0 0 15px greenyellow,
+            0 0 15px greenyellow,
+            0 0 15px greenyellow,
+            0 0 15px greenyellow;
+    background-color: greenyellow;
+    
+    margin: 0.8rem auto;
+    display: block;
+}
+
+
+.menu ul li a:hover::after{
+    width: 67%;
+    transition: width 0.3s linear;
+}
 .main .header{
     display: grid;
     grid-template-columns: 1fr 5fr;
@@ -42,7 +65,7 @@
 }
 .header .logo{
     grid-column: 1 / 2;
-    padding-top: 1.5rem;
+    padding: 1.5rem 3rem;
 
     
 }
@@ -51,6 +74,252 @@
     padding: 3rem;
     font-weight: 300;
     align-items: center;
-    
+}
 
+
+.article{
+    
+    display: grid;
+    grid-template-columns: 8rem 4fr 4fr;
+    background-color: #305d63;
+
+}
+.article .socials{
+    padding: 15rem 3rem;
+    /* background-color: aqua; */
+    grid-column: 1  / 2;
+    background-color: #1b4146;
+    box-shadow: 2px 2px 8px 0px ;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.article .socials ul{
+    list-style-type: none;
+    color: white;
+    display: flex;
+}
+.socials ul li{
+    text-decoration: none;
+    font-size: 2rem;
+    color: white;
+}
+
+
+.article .about{
+    padding: 10rem 7rem;
+    letter-spacing: 1px;
+    color: white;
+    /* background-color: blueviolet; */
+    grid-column: 2 / 3;
+}
+.about h2 {
+    display: inline-block; 
+    color: greenyellow;
+    font-style: monospace;
+    border-right: 5px solid white;
+    white-space: nowrap;
+    overflow: hidden;
+    animation:
+        typing 3s steps(19),
+        cursor 0.7s steps(19) infinite alternate;
+}
+/* cursor blinking */
+@keyframes cursor{
+    50% { border-color: transparent }
+}
+/* typing effect */
+@keyframes typing{
+    from{ width: 0 }
+    to { width: 9.3em }
+}
+.article .profilepic{
+    padding: 8rem 10px;
+    grid-column: 3 / 4;
+}
+
+.article .profilepic img{
+    border-radius: 50%;
+}
+.article .socials ul{
+    list-style-type: none;
+
+}
+.emoji{
+    
+    animation: waving-hand 2.5s infinite;
+    transform-origin: 70% 70%;
+    display: inline-block;
+}
+@keyframes waving-hand{
+    0%{
+        transform: rotate(0deg);
+    }
+    10%{
+        transform: rotate(14deg);
+    }
+    20%{
+        transform: rotate(-8deg);
+    }
+    30%{
+        transform: rotate(14deg);
+    }
+    40%{
+        transform: rotate(-4.0deg);
+    }
+    50%{
+        transform: rotate(10deg);
+    }
+    60%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+.article .about button.hire{
+    border: none;
+    outline: none;
+    height: 40px;
+    width: 140px;
+    background-color: rgb(122, 182, 32);
+    border-radius: 1.5rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 0.2rem 0.5rem;
+    color: white;
+    transition: 0.3s ease;
+}
+.article .about button.hire:hover{
+    cursor: pointer;
+    background-color: rgb(159, 228, 55);
+    box-shadow: 0 0 15px greenyellow,
+                0 0 15px greenyellow,
+                0 0 15px greenyellow,
+                0 0 15px greenyellow;
+}
+
+ .skills h1{
+    color: rgb(120, 177, 35);
+    font-weight: 1000;
+    
+    padding-left: 10%;
+}
+
+.skills ul{
+    color: #11292c;
+    list-style-type: none;
+    padding-left: 10%;
+    font-weight: none;
+}
+.skills{
+    display: grid;
+    background-color: rgb(212, 212, 212);
+    grid-template-columns: 1fr 2rem 1fr 2rem 1fr;
+    /* grid-template-areas: 'webDesign digitalMarketing graphicsDesign'; */
+    padding: 10rem 7rem;
+    justify-content: center;
+    
+}
+.skills .gridone{
+    border: 1px solid grey;
+    grid-column: 1 /2;
+    border-radius: 1rem;
+    
+}
+
+.skills .gridtwo{
+    
+    grid-column: 3 /4;
+    border: 1px solid grey;
+    border-radius: 1rem;
+    height: 15rem;
+    
+}
+.skills .gridone p{
+    margin-right: 2rem;  
+}
+
+
+
+.skills .gridthree{
+    grid-column: 5 /6;
+    border-radius: 1rem;
+    border: 1px solid grey;
+  
+    
+}
+
+.skills .gridone:hover, .skills .gridtwo:hover, .skills .gridthree:hover{
+    margin-top: -10px;
+    margin-bottom: 10px;
+    box-shadow: 2px 2px 8px 0px;
+    
+}
+
+
+.portfolio{
+    padding-top: 10rem;
+    padding-left: 7rem;
+    text-align:center;
+}
+.portfolio button{
+    padding-top: 3rem;
+        border: none;
+        outline: none;
+        height: 40px;
+        width: 15rem;
+        background-color: rgb(122, 182, 32);
+        border-radius: 1.5rem;
+        cursor: pointer;
+        font-size: 1.5rem;
+        padding: 0.2rem 0.5rem;
+        color: white;
+        transition: 0.3s ease;
+}
+.portfolio button:hover {
+    cursor: pointer;
+    background-color: rgb(159, 228, 55);
+    box-shadow: 0 0 15px greenyellow,
+        0 0 15px greenyellow,
+        0 0 15px greenyellow,
+        0 0 15px greenyellow;
+}
+
+.contact{
+    padding: 10rem 7rem;
+    text-align:center;
+    font-size: 1.2rem;
+    background-color: #1b4146;
+    color: white;
+}
+.contact .submit{
+    padding-top: 3rem;
+        border: none;
+        outline: none;
+        height: 40px;
+        width: 140px;
+        background-color: rgb(122, 182, 32);
+        border-radius: 1.5rem;
+        cursor: pointer;
+        font-size: 1.5rem;
+        padding: 0.2rem 0.5rem;
+        color: white;
+        transition: 0.3s ease;
+}
+.contact .submit:hover {
+    cursor: pointer;
+    background-color: rgb(159, 228, 55);
+    box-shadow: 0 0 15px greenyellow,
+        0 0 15px greenyellow,
+        0 0 15px greenyellow,
+        0 0 15px greenyellow;
+}
+
+.footer{
+    background-color: rgb(0, 0, 0);
+    color: greenyellow;
+    text-align: center;
+    font-size: 1.2rem;
+    height: 3rem;
 }
